@@ -1,0 +1,13 @@
+Computer networks — lecture notes
+A computer network connects devices so they can exchange information and share resources.
+Packet switching divides a message into smaller packets that travel independently across a network.
+A router forwards packets between networks by choosing a route based on the destination address.
+A switch connects devices within the same local network and forwards frames using hardware addresses.
+The transport layer provides communication between applications running on different hosts.
+TCP provides reliable delivery by acknowledging received data and retransmitting missing segments.
+UDP sends datagrams without establishing a connection and does not guarantee delivery or ordering.
+DNS translates human-readable domain names into the numerical addresses used by network devices.
+HTTPS protects data in transit through encryption and verifies server identity using digital certificates.
+Latency measures the time required for data to travel from its source to its destination.
+Bandwidth describes the maximum amount of data a connection can transfer in a given period.
+Congestion occurs when network demand exceeds available capacity and can cause packet loss.
