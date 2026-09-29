@@ -1,6 +1,12 @@
 # Stable portfolio deployment: FastAPI + PostgreSQL
 
-Status: deployment files are ready and local tests pass. A hosted service has **not** been provisioned yet. Render, Neon and GitHub account connections are needed before publishing.
+Status: **deployed and verified on 2026-09-29**.
+
+- Live app: https://studylens-3nuw.onrender.com
+- Source: https://github.com/muniraalhilal/studylens
+- Render Free Python service + Neon Free PostgreSQL 18.
+- 36 tests passed for each SQLite and PostgreSQL CI job; 21 live HTTPS checks passed.
+- Database credentials are stored only in Render environment settings.
 
 ## Target architecture
 
@@ -16,7 +22,7 @@ The cloud app runs independently of the developer laptop. Render supplies the st
 - Origin checking uses Render's `RENDER_EXTERNAL_URL` automatically. Set APP_ORIGIN only for a custom domain.
 - Hosted startup refuses SQLite to prevent accidental data loss on an ephemeral filesystem. It also refuses HTTP origins or insecure session cookies.
 - Small database connection pool with health checks and connection recycling.
-- GitHub Actions includes SQLite and PostgreSQL 16 jobs. The PostgreSQL job uses a disposable, dedicated test database; it has not been executed locally yet.
+- GitHub Actions includes SQLite and PostgreSQL 16 jobs. The PostgreSQL job uses a disposable, dedicated test database; both CI jobs passed on GitHub.
 
 ## Publish after account connection
 
@@ -36,7 +42,7 @@ Tables are initialized from the existing first-release SQLAlchemy models on star
 python -m pytest -q
 ```
 
-Latest local result: **36 cases passed**, including seven cloud-configuration cases. PostgreSQL CI and real hosted runtime validation remain pending account connection and deployment.
+Latest local result: **36 cases passed**, including seven cloud-configuration cases. PostgreSQL CI also passed all 36 cases. Hosted runtime passed all 21 checks; see `HOSTED-VALIDATION.json`.
 
 ## Sources
 
@@ -47,6 +53,6 @@ Latest local result: **36 cases passed**, including seven cloud-configuration ca
 
 ## بالعربية
 
-الإعداد جاهز لنشر الباك إند نفسه على استضافة مستقلة عن جهازك، مع PostgreSQL لحفظ البيانات. لم يتم إنشاء الرابط الثابت بعد؛ يلزم تفعيل حسابات Render وNeon وGitHub أولًا.
+الإعداد جاهز لنشر الباك إند نفسه على استضافة مستقلة عن جهازك، مع PostgreSQL لحفظ البيانات. تم النشر والتحقق: https://studylens-3nuw.onrender.com
 
-بعد النشر والتحقق سأستخدم الرابط الحقيقي للسيرة الذاتية. قد تتأخر أول زيارة للخطة المجانية بعد الخمول. لا توجد ترقية مدفوعة مفعلة في ملفات المشروع.
+يمكن استخدام الرابط أعلاه للسيرة الذاتية. قد تتأخر أول زيارة للخطة المجانية بعد الخمول. لا توجد ترقية مدفوعة مفعلة في ملفات المشروع.

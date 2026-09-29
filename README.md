@@ -1,6 +1,10 @@
 # StudyLens
 
-**A little focus. A lot of progress.**
+**A little focus. A lot of progress.
+
+**[Live app](https://studylens-3nuw.onrender.com) · [API docs](https://studylens-3nuw.onrender.com/docs) · [CI checks](https://github.com/muniraalhilal/studylens/actions)**
+
+Free hosting can take 50 seconds or longer to wake after inactivity. Enter without registration to explore an isolated guest workspace.**
 
 A bilingual study workspace with a Python/FastAPI backend: turn lecture files into extractive summaries, vocabulary practice quizzes, flashcards, and source-backed answers. Track your practice in a private account. Runs locally from VS Code without subscriptions, API keys, a frontend build tool, or an AI model download.
 
@@ -29,7 +33,7 @@ See [temporary HTTPS sharing](docs/SHARING.md) and [backend validation: 29 autom
 
 ## Stable CV deployment
 
-Cloud deployment preparation is included for the same FastAPI backend on Render with persistent Neon PostgreSQL. See [deployment status and steps](docs/DEPLOYMENT.md). Account connections and real cloud verification are still required; no stable hosted URL has been created yet. Local tests: **36 passed**.
+Cloud deployment preparation is included for the same FastAPI backend on Render with persistent Neon PostgreSQL. See [deployment status and steps](docs/DEPLOYMENT.md). Deployed on Render with Neon PostgreSQL. GitHub CI passed **36 tests on SQLite and 36 on PostgreSQL**. The hosted service passed **21 HTTPS workflow checks** on 2026-09-29.
 
 ## Quick start in VS Code
 
@@ -86,7 +90,7 @@ Install Docker with Compose, then:
 docker compose up -d db
 ```
 
-Uncomment the PostgreSQL `DATABASE_URL` in `.env`, then restart FastAPI. Tables are initialized on startup. The Compose password is a local demo default; replace it before using any shared environment. Switching database URLs selects a separate database and does not migrate existing SQLite data. Stop the database with `docker compose stop db`; its named volume preserves data. PostgreSQL wiring is provided but requires Docker and was not exercised in the build environment.
+Uncomment the PostgreSQL `DATABASE_URL` in `.env`, then restart FastAPI. Tables are initialized on startup. The Compose password is a local demo default; replace it before using any shared environment. Switching database URLs selects a separate database and does not migrate existing SQLite data. Stop the database with `docker compose stop db`; its named volume preserves data. PostgreSQL is exercised by CI and the hosted service uses Neon PostgreSQL.
 
 ## How the free study engine works
 
@@ -175,7 +179,7 @@ Manual browser checks and screenshots are documented in [the demo guide](docs/DE
 - Record the short flow in [DEMO.md](docs/DEMO.md), including Arabic RTL and dark mode.
 - Suggested CV bullet: **Built StudyLens, a bilingual FastAPI study platform with authenticated document processing, source-cited retrieval, automated recall quizzes, and persistent progress tracking using SQLAlchemy.**
 - Describe the default engine accurately as an offline extractive retrieval pipeline; don't claim an LLM, embeddings, OCR or a hosted service that is not included.
-- Publish this folder as its own GitHub repository. The generated local database, secrets and virtual environment are excluded. No GitHub repository has been published. The sharing helper supports a temporary public preview.
+- Publish this folder as its own GitHub repository. The generated local database, secrets and virtual environment are excluded. Source repository: https://github.com/muniraalhilal/studylens. The sharing helper supports a temporary public preview.
 
 ## Technical references
 

@@ -1,0 +1,28 @@
+{
+  "url": "https://studylens-3nuw.onrender.com",
+  "checks_passed": 21,
+  "checks": [
+    "HTTPS and database health",
+    "Public demo mode",
+    "No access without session",
+    "No-registration guest entry",
+    "Secure HttpOnly cookie",
+    "Automatic bilingual samples",
+    "Guest session resumes",
+    "Independent visitors",
+    "Foreign document access blocked",
+    "Foreign document deletion blocked",
+    "Live upload and isolated parser",
+    "Generated summaries and flashcards",
+    "Cited document answer",
+    "No-match fallback",
+    "Exact server-side score",
+    "Duplicate submission rejected",
+    "Review saved",
+    "Real database progress",
+    "Other visitor progress unaffected",
+    "Cross-origin changes blocked",
+    "Logout revokes session"
+  ],
+  "seconds": 9.75
+}
