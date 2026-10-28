@@ -6,7 +6,7 @@
 
 Free hosting can take 50 seconds or longer to wake after inactivity. Enter without registration to explore an isolated guest workspace.**
 
-A bilingual study workspace with a Python/FastAPI backend: turn lecture files into extractive summaries, vocabulary practice quizzes, flashcards, and source-backed answers. Track your practice in a private account. Runs locally from VS Code without subscriptions, API keys, a frontend build tool, or an AI model download.
+A bilingual study workspace with a Python/FastAPI backend: turn lecture files into extractive summaries, vocabulary practice quizzes, flashcards, and source-backed answers. Track your practice in a private account. Runs locally from VS Code without subscriptions, API keys, a frontend build tool, or additional model downloads.
 
 > العربية: مشروع متكامل يعمل محليًا، بواجهة عربية وإنجليزية ومظهر فاتح وداكن. [دليل التشغيل العربي](docs/README.ar.md).
 
@@ -103,7 +103,7 @@ The default engine is **offline and extractive**, not a generative language mode
 5. Rank chunks by query-term frequency and inverse document frequency for question answering.
 6. Return up to three original passages with page and chunk references, or no-match.
 
-This implements a retrieval-grounded **fallback** for a RAG-style workflow. It does not implement embedding/vector search or a generative RAG model. Answers are source passages, not a claim that an LLM reasoned about the document. No network requests leave the app during study. See [architecture and extension points](docs/ARCHITECTURE.md).
+This implements a retrieval-grounded **fallback** for a RAG-style workflow. It does not implement embedding/vector search or a generative RAG model. Answers are original source passages. No network requests leave the app during study. See [architecture and extension points](docs/ARCHITECTURE.md).
 
 ### Honest limitations
 
@@ -178,7 +178,7 @@ Manual browser checks and screenshots are documented in [the demo guide](docs/DE
 - Use the real screenshots in `docs/screenshots/` in a GitHub README or portfolio page.
 - Record the short flow in [DEMO.md](docs/DEMO.md), including Arabic RTL and dark mode.
 - Suggested CV bullet: **Built StudyLens, a bilingual FastAPI study platform with authenticated document processing, source-cited retrieval, automated recall quizzes, and persistent progress tracking using SQLAlchemy.**
-- Describe the default engine accurately as an offline extractive retrieval pipeline; don't claim an LLM, embeddings, OCR or a hosted service that is not included.
+- Describe the default engine accurately as an offline extractive retrieval pipeline; embeddings, OCR and hosted processing are not included.
 - Publish this folder as its own GitHub repository. The generated local database, secrets and virtual environment are excluded. Source repository: https://github.com/muniraalhilal/studylens. The sharing helper supports a temporary public preview.
 
 ## Technical references
