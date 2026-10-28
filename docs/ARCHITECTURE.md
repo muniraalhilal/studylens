@@ -43,7 +43,7 @@ Origin validation and strict cookies limit cross-site mutation requests. Login/r
 
 ## Retrieval and extensibility
 
-The engine tokenizes Latin and Arabic text, removes a small stopword set, weights matches by term frequency and inverse document frequency, and returns original passages. Arabic tokenization is basic: there is no morphological analysis. No query relevance confidence or LLM factuality is implied.
+The engine tokenizes Latin and Arabic text, removes a small stopword set, weights matches by term frequency and inverse document frequency, and returns original passages. Arabic tokenization is basic: there is no morphological analysis. Query relevance confidence is not provided.
 
 A future local model provider can be added behind the study service: retrieve the same snippets, pass only those snippets to a locally hosted model, validate citations, and fall back to extractive passages on model failure. That extension is not required or bundled. Similarly, embeddings, OCR and background queues are explicit future enhancements, not hidden paid dependencies.
 
