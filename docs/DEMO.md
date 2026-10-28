@@ -12,7 +12,7 @@
 8. Toggle dark mode, reload the page, and show that the preference persists.
 9. Open My progress, then `/docs` to show the backend API structure.
 
-Do not present the offline engine as a generative LLM. Explain the benefit: the demo needs no paid service and returns inspectable source text. Mention the extension point for a future local model.
+Explain the offline engine: the demo needs no paid service and returns inspectable source text. Mention the available extension points.
 
 ## Real screenshots
 
